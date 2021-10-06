@@ -4,12 +4,27 @@ sources:
   - name: northwindetl
     tables:
       - name: orders
-        description: Tabela de pedidos
-      - name: customers
-        description: Tabela de clientes
+        description: Esta tabela contém informações sobre os pedidos da Northwind
         columns:
-          - name: customer_id
-            description: Id do cliente
+          - name: order_id
+            description: Chave primária original da tabela
             tests:
               - unique
               - not_null
+
+      - name: customers
+        description: Esta tabela contém informações sobre os clientes da Northwind
+
+      - name: products
+        description: Esta tabela contém informações sobre os produtos da Northwind
+
+      - name: shippers
+        description: Esta tabela contém informações sobre os transportadores da Northwind
+
+      - name: suppliers
+        description: Esta tabela contém informações sobre os fornecedores da Northwind
+      
+      - name: order_details
+        description: Esta tabela contém informações sobre pedidos item da Northwind
+
+      

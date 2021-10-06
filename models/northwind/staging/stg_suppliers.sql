@@ -1,11 +1,14 @@
 with
     source_data as (
         select
-            customer_id
-            , country
+        -- primary key
+            supplier_id
+
+            , country	
             , city
             , fax
             , postal_code
+            , homepage	
             , address
             , region
             , contact_name
@@ -19,7 +22,7 @@ with
             , _sdc_received_at	
             , _sdc_batched_at as last_etl_run
 
-        from {{  source('northwindetl', 'customers')  }}
+        from {{  source('northwindetl', 'suppliers')  }}
     )
 
 select * from source_data
