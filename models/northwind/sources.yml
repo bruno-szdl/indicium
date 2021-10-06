@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: northwindetl
+    tables:
+      - name: orders
+        description: Tabela de pedidos
+      - name: customers
+        description: Tabela de clientes
+        columns:
+          - name: customer_id
+            description: Id do cliente
+            tests:
+              - unique
+              - not_null
