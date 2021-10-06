@@ -1,10 +1,29 @@
-Welcome to your new dbt project!
 
-### Using the starter project
+### Northwind Datawarehouse
+This repository was created in order to accomplish the 5th challenge of the [Data Analyst course](https://academy.indicium.tech/my/) from [Indicium](https://indicium.tech/).
 
-Try running the following commands:
+Tthe challenge's taks was to use DBT to create a DW for the Northwind Traders Company. The DW should have the followingg tables
+- Orders (Fact)
+- Customers (Dimension)
+- Products (Dimension)
+- Shippers (Dimension)
+- Suppliers (Dimension)
+
+![Alt text](/images/conceptual.png?raw=true)
+
+The PostgreSQL database was provided by [Indicium](https://indicium.tech/). The database was then extractet and loaded into GCP's BigQuery using [Stitch](https://www.stitchdata.com/). 
+
+The transformation of the data was made using [dbt cloud](https://www.getdbt.com/).
+
+### Running dbt
+- dbt deps
 - dbt run
 - dbt test
+
+### Preview
+
+![Alt text](/images/preview.png?raw=true)
+![Alt text](/images/lineage.png?raw=true)
 
 
 ### Resources:
