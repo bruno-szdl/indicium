@@ -1,0 +1,158 @@
+version: 2
+
+models:
+    - name: fact_orders
+      description: Tabela de fatos
+      columns:
+          - name: unique_key
+            description: "Chave única da tabela."
+            tests:
+              - unique
+              - not_null
+          - name: order_id
+            description: "A chave primária original da tabela."
+          - name: customer_fk
+            description: "Chave estrangeira que liga a tabela fato com a tabela dimensão clientes."
+          - name: product_fk
+            description: "Chave estrangeira que liga a tabela fato com a tabela dimensão produtos."
+          - name: supplier_fk
+            description: "Chave estrangeira que liga a tabela fato com a tabela dimensão fornecedores."
+          - name: shipper_fk
+            description: "Chave estrangeira que liga a tabela fato com a tabela dimensão transportadores."
+          - name: unit_price
+            description: "Preço unitário do produto."
+          - name: quantity
+            description: "Quantidade do produto no pedido."
+          - name: discount
+            description: "Porcentagem de desconto sobre o produto."
+          - name: freight
+            description: Valor do frete sobre o pedido."
+          - name: order_date
+            description: "Data do pedido."
+          - name: required_date
+            description: "Data exigida para entrega do pedido."
+          - name: shipped_date
+            description: "Data do envio do pedido."
+          - name: ship_country
+            description: "País de destino do pedido."
+          - name: ship_region
+            description: "Região de destino do pedido."
+          - name: ship_address
+            description: "Endereço de destino do pedido."
+          - name: ship_postal_code
+            description: "Código postal de destino do pedido."
+          - name: ship_city
+            description: "Cidade de destino do pedido."
+          - name: ship_country
+            description: "Empresa de destino do pedido."
+            
+
+    - name: dim_customers
+      description: Tabela de dimensão de clientes
+      columns:
+          - name: customer_sk
+            description: "Chave única da tabela"
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "A chave primária original da tabela"
+          - name: country
+            description: "País do cliente."
+          - name: city
+            description: "Cidade do cliente."
+          - name: fax
+            description: "Fax do cliente."
+          - name: postal_code
+            description: "Código postal do cliente."
+          - name: address
+            description: "Endereço do cliente."
+          - name: region
+            description: "Região do cliente."
+          - name: contact_name
+            description: "Nome de contato do cliente."
+          - name: phone
+            description: "Número de telefone do cliente."
+          - name: company_name
+            description: "Nome da empresa do cliente."
+          - name: contact_title
+            description: "Título do cargo do cliente."
+
+    - name: dim_products
+      description: Tabela de dimensão de produtos
+      columns:
+          - name: product_sk
+            description: "Chave única da tabela"
+            tests:
+              - unique
+              - not_null
+          - name: product_id
+            description: "A chave primária original da tabela"
+          - name: supplier_id
+            description: "Id do fornecedor"
+          - name: product_name
+            description: "Nome do produto."
+          - name: category_id
+            description: "Categoria do produto."
+          - name: unit_price
+            description: "Preço unitário do produto."
+          - name: units_in_stock
+            description: "Número de unidades do produto em estoque."
+          - name: quantity_per_unit
+            description: "Quantidade de produtos por unidade."
+          - name: units_on_order
+            description: "Número de unidades do produto separadas para entrega."
+          - name: discountinued
+            description: "Produto descontinuado."
+          - name: reorder_level
+            description: "Nível de abastecimento."
+          
+
+    - name: dim_shippers
+      description: Tabela de dimensão de transportadores
+      columns:
+          - name: shipper_sk
+            description: "Chave única da tabela"
+            tests:
+              - unique
+              - not_null
+          - name: shipper_id
+            description: "A chave primária original da tabela"
+          - name: phone
+            description: "Número de telefone do transportador."
+          - name: company_name
+            description: "Nome da empresa transportadora."
+
+    - name: dim_suppliers
+      description: Tabela de dimensão de fornecedores
+      columns:
+          - name: supplier_sk
+            description: "Chave única da tabela"
+            tests:
+              - unique
+              - not_null
+          - name: supplier_id
+            description: "A chave primária original da tabela"
+          - name: country
+            description: "País do fornecedor."
+          - name: city
+            description: "Cidade do fornecedor."
+          - name: fax
+            description: "Fax do fornecedor."
+          - name: postal_code
+            description: "Código postal do fornecedor."
+          - name: homepage
+            description: "Site do fornecedor."
+          - name: address
+            description: "Endereço do fornecedor."
+          - name: region
+            description: "Região do fornecedor."
+          - name: contact_name
+            description: "Nome de contato do fornecedor."
+          - name: phone
+            description: "Número de telefone do fornecedor."
+          - name: company_name
+            description: "Nome da empresa do fornecedor."
+          - name: contact_title
+            description: "Título do cargo do fornecedor."
+          
