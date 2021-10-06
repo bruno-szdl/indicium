@@ -7,7 +7,7 @@ with
     )
     , transformed as (
         select
-            row_number() over (order by supplier_id) as supplier_sk
+            {{ dbt_utils.surrogate_key('supplier_id', 'phone') }} as supplier_sk
             , supplier_id
             , country	
             , city

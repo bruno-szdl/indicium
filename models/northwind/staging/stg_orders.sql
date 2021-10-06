@@ -1,9 +1,13 @@
 with
     source_data as (
         select
+            -- primary key
             order_id
+
+            -- foreign keys
             , customer_id
             , employee_id
+            
             , order_date
             , ship_region
             , shipped_date

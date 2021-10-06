@@ -7,7 +7,7 @@ with
     )
     , transformed as (
         select
-            row_number() over (order by product_id) as product_sk
+            {{ dbt_utils.surrogate_key('product_id', 'supplier_id') }} as product_sk
             , product_id
             , supplier_id
             , category_id

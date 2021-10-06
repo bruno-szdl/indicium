@@ -1,9 +1,13 @@
 with
     source_data as (
         select
+            --primary key
             product_id
+
+            -- foreign keys
             , supplier_id
             , category_id
+            
             , product_name
             , unit_price
             , units_in_stock	

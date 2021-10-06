@@ -7,7 +7,7 @@ with
     )
     , transformed as (
         select
-            row_number() over (order by shipper_id) as shipper_sk
+            {{ dbt_utils.surrogate_key('shipper_id', 'phone') }} as shipper_sk
             , shipper_id
             , phone	
             , company_name

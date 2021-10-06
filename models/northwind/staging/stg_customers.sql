@@ -1,7 +1,9 @@
 with
     source_data as (
         select
+            -- primary key
             customer_id
+            
             , country
             , city
             , fax

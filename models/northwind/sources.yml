@@ -14,16 +14,40 @@ sources:
 
       - name: customers
         description: Esta tabela contém informações sobre os clientes da Northwind
+        columns:
+          - name: customer_id
+            description: Chave primária original da tabela
+            tests:
+              - unique
+              - not_null
 
       - name: products
         description: Esta tabela contém informações sobre os produtos da Northwind
+        columns:
+          - name: product_id
+            description: Chave primária original da tabela
+            tests:
+              - unique
+              - not_null
 
       - name: shippers
         description: Esta tabela contém informações sobre os transportadores da Northwind
+        columns:
+          - name: shipper_id
+            description: Chave primária original da tabela
+            tests:
+              - unique
+              - not_null
 
       - name: suppliers
         description: Esta tabela contém informações sobre os fornecedores da Northwind
-      
+        columns:
+          - name: supplier_id
+            description: Chave primária original da tabela
+            tests:
+              - unique
+              - not_null
+
       - name: order_details
         description: Esta tabela contém informações sobre pedidos item da Northwind
 
